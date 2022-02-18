@@ -3,7 +3,6 @@ import { buyItem } from './services/fetch-utils';
 export default function ListItem({ fetchItems, listItem }) {
 
   async function handleClick() {
-    console.log(listItem);
     // buy the item (in supabase)
     await buyItem(listItem.id);
     
@@ -11,7 +10,6 @@ export default function ListItem({ fetchItems, listItem }) {
     await fetchItems();
   }
 
-  
 //  () => {} is javascript for "do nothing". It's an arrow function that doesn't nothing at all.
   return (
     // on click, if it's already been bought, do nothing; otherwise, call the handleClick function
